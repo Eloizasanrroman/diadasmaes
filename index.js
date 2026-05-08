@@ -146,3 +146,41 @@ function criarCoracoes() {
         }, 4000);
     }
 }
+
+
+
+
+
+
+
+
+
+const speechText = document.getElementById("speechText");
+const speechBubble = document.getElementById("speechBubble");
+
+const frases = [
+  "Mãe... você é meu mundo 💖",
+  "Seu abraço é o lugar mais seguro que existe 🥺",
+  "Eu amo a sua amizade e o seu jeitinho 💗",
+  "Obrigada por ser minha inspiração ✨",
+  "Eu te amo pra sempre, mamãe 🌷"
+];
+
+let fraseIndex = 0;
+
+function trocarFrase() {
+  speechBubble.classList.add("fade");
+
+  setTimeout(() => {
+    fraseIndex++;
+    if (fraseIndex >= frases.length) fraseIndex = 0;
+
+    speechText.innerText = frases[fraseIndex];
+    speechBubble.classList.remove("fade");
+  }, 700);
+}
+
+setInterval(trocarFrase, 3500);
+
+
+

@@ -96,7 +96,7 @@ body {
 }
 
 .hero-btn:hover {
-  background: #d56f74;
+  background: rgb(223, 120, 148);
 }
 
 /* HERO PHOTOS */
@@ -642,4 +642,249 @@ footer {
         transform: translateY(100vh);
         opacity: 0;
     }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.camera-section {
+  padding: 80px 8%;
+  text-align: center;
+  background: linear-gradient(to bottom, #fff, #fde8ee);
+}
+
+.camera-section h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 38px;
+  margin-bottom: 40px;
+  color: #3b2f2f;
+}
+
+.camera {
+  width: 220px;
+  height: 220px;
+  background: #ff7fa8;
+  margin: auto;
+  border-radius: 30px;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.camera-lente {
+  width: 90px;
+  height: 90px;
+  background: #222;
+  border-radius: 50%;
+  position: absolute;
+  top: 45px;
+  left: 65px;
+}
+
+.btn-camera {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: none;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: white;
+  cursor: pointer;
+}
+
+#flash {
+  position: fixed;
+  inset: 0;
+  background: white;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.2s;
+}
+
+#galeria-fotos {
+  margin-top: 40px;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.foto {
+  width: 120px;
+  height: 90px;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  animation: aparecer 0.4s ease;
+}
+
+@keyframes aparecer {
+  from { transform: scale(0.6); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* SECTION MENINA FALANDO */
+.talk-section {
+  width: 100%;
+  padding: 100px 8%;
+  background: #fde8ee;
+  text-align: center;
+}
+
+.talk-title {
+  font-family: "Playfair Display", serif;
+  font-size: 38px;
+  color: #3b2f2f;
+  padding-bottom: 40px;
+  
+}
+
+/* área geral */
+.talk-area {
+  position: relative;
+  max-width: 700px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* card */
+.talk-card {
+  width: 320px;
+  height: 320px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 35px;
+  border: 3px dashed rgba(255, 79, 163, 0.45);
+  box-shadow: 0px 18px 40px rgba(0,0,0,0.12);
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* imagem menina */
+.talk-girl {
+  width: 230px;
+  height: auto;
+  animation: floatGirl 3s ease-in-out infinite;
+}
+
+@keyframes floatGirl {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0px); }
+}
+
+/* balão */
+.speech-bubble {
+  position: absolute;
+  right: -50px;
+  top: 40px;
+  width: 280px;
+  padding: 18px 18px;
+  background: white;
+  border-radius: 22px;
+  border: 3px solid rgba(203, 181, 255, 0.6);
+  box-shadow: 0px 14px 28px rgba(0,0,0,0.10);
+  text-align: left;
+  opacity: 1;
+  transition: 0.6s;
+}
+
+/* pontinha do balão */
+.speech-bubble::before {
+  content: "";
+  position: absolute;
+  left: -18px;
+  top: 40px;
+  width: 0;
+  height: 0;
+  border-top: 14px solid transparent;
+  border-bottom: 14px solid transparent;
+  border-right: 18px solid white;
+}
+
+/* borda da pontinha */
+.speech-bubble::after {
+  content: "";
+  position: absolute;
+  left: -22px;
+  top: 38px;
+  width: 0;
+  height: 0;
+  border-top: 16px solid transparent;
+  border-bottom: 16px solid transparent;
+  border-right: 22px solid rgba(203, 181, 255, 0.6);
+  z-index: -1;
+}
+
+.speech-bubble p {
+  font-size: 15px;
+  color: #5a2f6f;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+/* efeito sumindo */
+.speech-bubble.fade {
+  opacity: 0;
+  transform: translateY(15px);
+}
+
+/* RESPONSIVO */
+@media (max-width: 850px) {
+  .speech-bubble {
+    right: 0;
+    top: -90px;
+  }
+
+  .speech-bubble::before,
+  .speech-bubble::after {
+    display: none;
+  }
+}
+
+@media (max-width: 500px) {
+  .talk-title {
+    font-size: 36px;
+  }
+
+  .talk-card {
+    width: 270px;
+    height: 270px;
+  }
+
+  .talk-girl {
+    width: 190px;
+  }
+
+  .speech-bubble {
+    width: 250px;
+    top: -95px;
+  }
 }
